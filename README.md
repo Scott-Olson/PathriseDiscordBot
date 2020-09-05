@@ -4,11 +4,11 @@
  <img width=200px height=200px src="https://i.imgur.com/FxL5qM0.jpg" alt="Bot logo"></a>
 </p>
 
-<h3 align="center">DiscordTestBot</h3>
+<h3 align="center">Pathrise SWE Discord Bot</h3>
 
 ---
 
-<p align="center"> 🤖 A bot to learn about the discord bot making cycle. Intend to use this knowledge to make a bot for the Pathrise discord server.
+<p align="center"> 🤖 A bot to to help manage the Pathrise SWE Fellows Discord server. 
     <br> 
 </p>
 
@@ -31,34 +31,12 @@ Place holder for now
 
 To use the bot, type:
 ```
-!dict word
+!help
 ```
-The first part, i.e. "!dict" **is not** case sensitive.
+The first part, i.e. "!help" **is not** case sensitive.
 
-The bot will then give you the Oxford Dictionary (or Urban Dictionary; if the word does not exist in the Oxford Dictionary) definition of the word as a comment reply.
+The bot will list the available commands.
 
-### Example:
-
-> !dict what is love
-
-**Definition:**
-
-Baby, dont hurt me~
-Dont hurt me~ no more.
-
-**Example:**
-
-Dude1: Bruh, what is love?
-Dude2: Baby, dont hurt me, dont hurt me- no more!
-Dude1: dafuq?
-
-**Source:** https://www.urbandictionary.com/define.php?term=what%20is%20love
-
----
-
-<sup>Beep boop. I am a bot. If there are any issues, contact my [Master](https://www.reddit.com/message/compose/?to=PositivePlayer1&subject=/u/Wordbook_Bot)</sup>
-
-<sup>Want to make a similar reddit bot? Check out: [GitHub](https://github.com/kylelobo/Reddit-Bot)</sup>
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
