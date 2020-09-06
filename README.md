@@ -73,7 +73,8 @@ To see an example project on how to deploy your bot, please see my own configura
 + **Heroku**: https://github.com/kylelobo/Reddit-Bot#deploying_the_bot
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-+ [PRAW](https://discordpy.readthedocs.io/en/latest/index.html) - Python Discord API Wrapper
++ [Discordpy](https://discordpy.readthedocs.io/en/latest/index.html) - Python Discord API Wrapper
++ [Discordpy.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/index.html) - Bot commands framework
 + [Heroku](https://www.heroku.com/) - SaaS hosting platform
 
 ## ✍️ Authors <a name = "authors"></a>
