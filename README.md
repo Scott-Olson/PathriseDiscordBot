@@ -37,6 +37,18 @@ The first part, i.e. "!help" **is not** case sensitive.
 
 The bot will list the available commands.
 
+### TODO
+
+---
+
+- [x] Create and authorize bot framework
+- [x] Implement base commands (help, linkedin, welcome message)
+- [ ] Create structure for leetcode integration
+- [ ] Create structure for code templates
+- [ ] Deploy bot to Heroku
+- [ ] Deploy bot to discord server
+
+
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
