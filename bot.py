@@ -24,12 +24,18 @@ bot = commands.Bot(command_prefix = '!', case_insensitive = True, description = 
 # broadcast the fellows linked in list
 cur_list = os.getenv('FELLOWS_LI_LIST')
 short_link = os.getenv('SHORT_LINK')
+bot_link = os.getenv('DISCORD_REPO')
 @bot.command(name = 'linkedin', help = 'Responds with a link to the fellows google sheet')
 async def linked_in_list(ctx):
 	li_chan = bot.get_channel(752050305234894938)
 	response = f"Here is the official compiled list of fellow's LinkedIn:  {short_link} \nIf you are not on the list, please feel free to add yourself! \n Please also check out #linkedin-plug for other Discord users to connect with."
 
 	print("Someone is asking for the linkedin list...")
+	await ctx.send(response)
+
+@bot.command(name = 'botinfo', help = 'Github page of the Discord bot. Feel free to contribute!')
+async def bot_info(ctx):
+	response = f'This is the repo of this bot: {bot_link} \n Feel free to contribute!'
 	await ctx.send(response)
 
 # easy leetcode problem
