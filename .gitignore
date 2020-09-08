@@ -2,3 +2,5 @@
 /botDev/
 testData.txt
 testData.py
+
+__pycache__

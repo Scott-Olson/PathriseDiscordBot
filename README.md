@@ -22,6 +22,8 @@
 ## 🧐 About <a name = "about"></a>
 This is a really simple bot with the idea that it will become more complex and evolve over time. 
 
+The core concept is to provide basic leetcode integration to the discord server for fellows to work on together. Other functionality includes providing lists of info for fellows.
+
 ## 🎥 Demo / Working <a name = "demo"></a>
 Place holder for now
 ![Working](https://media.giphy.com/media/20NLMBm0BkUOwNljwv/giphy.gif)
@@ -51,7 +53,7 @@ To get an easy leetcode problem, type:
 - [x] Create and authorize bot framework
 - [x] Implement base commands (help, linkedin, welcome message)
 - [x] Create structure for leetcode integration
-- [ ] ~~ Create structure for code templates ~~
+- [ ] ~~Create structure for code templates~~
 - [ ] Deploy bot to Heroku
 - [ ] Deploy bot to discord server
 - [ ] Automate the daily problems

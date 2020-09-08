@@ -8,6 +8,8 @@ import problems
 from dotenv import load_dotenv
 from discord.ext import commands
 
+problems.update_problem_list()
+
 load_dotenv()
 # the Oauth2 token for your bot user from the .env file
 token = os.getenv('DISCORD_TOKEN')
@@ -22,8 +24,8 @@ GUILD = bot.fetch_guild(751588559693152297)
 
 
 # broadcast the fellows linked in list
-cur_list = "https://docs.google.com/spreadsheets/d/1clZOTGUNFC6Osf5OIK2S5kGsr2IzhkidcZ9FBe88kdk/"
-short_link = "https://bit.ly/2ZcIzls"
+cur_list = os.getenv('FELLOWS_LI_LIST')
+short_link = os.getenv('SHORT_LINK')
 @bot.command(name = 'linkedin', help = 'Responds with a link to the fellows google sheet')
 async def linked_in_list(ctx):
 	li_chan = bot.get_channel(752050305234894938)
@@ -36,6 +38,7 @@ async def linked_in_list(ctx):
 @bot.command(name = 'easy', help = 'Returns a link to a leetcode easy.')
 async def get_easy(ctx):
 	prob = problems.get_easy_problem()
+	response = f"Here is an easy problem to try!\n {prob.get_title()}: {prob.get_link()}"
 	await ctx.send(response)
 
 # med leetcode problem
@@ -61,7 +64,8 @@ async def get_random(ctx):
 
 # set the daily leetcode problem for the server
 @bot.command(name = 'setdaily', help = 'Used to set the daily problem for the server.')
-
+async def set_daily(ctx):
+	await ctx.send()
 
 
 """
@@ -74,20 +78,8 @@ https://leetcode.com/problems/random-one-question/all/?difficulty=Easy
 https://leetcode.com/problems/random-one-question/all/?difficulty=Medium
 https://leetcode.com/problems/random-one-question/all/?difficulty=Hard
 """
-def get_leetcode_question(dif: str):
-	# build the url for the request
-
-	r = requests.get('https://leetcode.com/problems/random-one-question/all/', params = {'difficulty=': dif}, allow_redirects = True)
-	print(r.url)
-	print(r.text)
-	# print(r.content)
 
 
-
-
-
-bot.add_cog(Greetings(bot))
-bot.add_cog(Templates(bot))
 bot.run(token)
 
 
