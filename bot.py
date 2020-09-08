@@ -2,6 +2,7 @@ import os
 import asyncio
 import discord
 import requests
+import problems
 # import beautifulsoup4
 
 from dotenv import load_dotenv
@@ -18,27 +19,12 @@ my_guild = os.getenv('DISCORD_GUILD')
 # Example: !test -> calls the test command
 bot = commands.Bot(command_prefix = '!', case_insensitive = True, description = 'Pathrise SWE Bot')
 GUILD = bot.fetch_guild(751588559693152297)
-# greetings for members and channel updates
-class Greetings(commands.Cog):
-	def __init__(self, bot):
-		self.bot = bot
-
-	@commands.Cog.listener()
-	async def on_member_join(self, member):
-		channel = member.guild.system_channel
-		if channel is not None:
-			await channel.send('Welcome {0.mention}.'.format(member))
-
-# Pathrise code templates
-class Templates(commands.Cog):
-	def __init__(self, bot):
-		self.bot = bot
 
 
 # broadcast the fellows linked in list
 cur_list = "https://docs.google.com/spreadsheets/d/1clZOTGUNFC6Osf5OIK2S5kGsr2IzhkidcZ9FBe88kdk/"
 short_link = "https://bit.ly/2ZcIzls"
-@bot.command(name='linkedin', help='Responds with a link to the fellows google sheet')
+@bot.command(name = 'linkedin', help = 'Responds with a link to the fellows google sheet')
 async def linked_in_list(ctx):
 	li_chan = bot.get_channel(752050305234894938)
 	response = f"Here is the official compiled list of fellow's LinkedIn:  {short_link} \nIf you are not on the list, please feel free to add yourself! \n Please also check out #linkedin-plug for other users to connect with."
@@ -47,30 +33,34 @@ async def linked_in_list(ctx):
 	await ctx.send(response)
 
 # easy leetcode problem
-@bot.command(name='easy', help='Returns a link to a leetcode easy.')
+@bot.command(name = 'easy', help = 'Returns a link to a leetcode easy.')
 async def get_easy(ctx):
-	response = f'Try this leetcode easy! LINK'
+	prob = problems.get_easy_problem()
 	await ctx.send(response)
 
 # med leetcode problem
-@bot.command(name='medium', help='Returns a link to a leetcode medium.')
+@bot.command(name = 'medium', help = 'Returns a link to a leetcode medium.')
 async def get_medium(ctx):
+	prob = problems.get_medium_problem()
 	response = f'Try this leetcode medium! LINK'
 	await ctx.send(response)
 
 # hard leetcode problem
-@bot.command(name='hard', help='Returns a link to a leetcode hard.')
+@bot.command(name = 'hard', help = 'Returns a link to a leetcode hard.')
 async def get_hard(ctx):
-	get_leetcode_question('hard')
+	prob = problems.get_hard_problem()
 	response = f'Try this leetcode hard! LINK'
 	await ctx.send(response)
 
 # random leetcode problem
-@bot.command(name='random', help='Returns a link to a random leetcode.')
+@bot.command(name = 'random', help = 'Returns a link to a random leetcode.')
 async def get_random(ctx):
 	# get_leetcode_question('')
 	response = f'Try this random leetcode! LINK'
 	await ctx.send(response)
+
+# set the daily leetcode problem for the server
+@bot.command(name = 'setdaily', help = 'Used to set the daily problem for the server.')
 
 
 

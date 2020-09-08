@@ -37,16 +37,26 @@ The first part, i.e. "!help" **is not** case sensitive.
 
 The bot will list the available commands.
 
+
+Other Examples
+To get an easy leetcode problem, type:
+```
+!easy
+```
+
 ### TODO <a name = "todo"></a>
 
 ---
 
 - [x] Create and authorize bot framework
 - [x] Implement base commands (help, linkedin, welcome message)
-- [ ] Create structure for leetcode integration
-- [ ] Create structure for code templates
+- [x] Create structure for leetcode integration
+- [ ] ~~ Create structure for code templates ~~
 - [ ] Deploy bot to Heroku
 - [ ] Deploy bot to discord server
+- [ ] Automate the daily problems
+- [ ] Automate the problem skimming to refresh problems if something is added to leetcode.
+
 
 
 
