@@ -27,7 +27,7 @@ short_link = os.getenv('SHORT_LINK')
 @bot.command(name = 'linkedin', help = 'Responds with a link to the fellows google sheet')
 async def linked_in_list(ctx):
 	li_chan = bot.get_channel(752050305234894938)
-	response = f"Here is the official compiled list of fellow's LinkedIn:  {short_link} \nIf you are not on the list, please feel free to add yourself! \n Please also check out #linkedin-plug for other users to connect with."
+	response = f"Here is the official compiled list of fellow's LinkedIn:  {short_link} \nIf you are not on the list, please feel free to add yourself! \n Please also check out #linkedin-plug for other Discord users to connect with."
 
 	print("Someone is asking for the linkedin list...")
 	await ctx.send(response)
@@ -65,7 +65,7 @@ async def get_random(ctx):
 	await ctx.send(response)
 
 # set the daily leetcode problem for the server
-@bot.command(name = 'setdaily', help = 'Used to set the daily problem for the server.')
+@bot.command(name = 'setdaily', help = '*in development* Used to set the daily problem for the server.')
 async def set_daily(ctx):
 	await ctx.send()
 
