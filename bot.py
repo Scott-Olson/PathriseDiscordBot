@@ -17,11 +17,32 @@ my_guild = os.getenv('DISCORD_GUILD')
 # command_prefix determines what each command needs to start with
 # Example: !test -> calls the test command
 bot = commands.Bot(command_prefix = '!', case_insensitive = True, description = 'Pathrise SWE Bot')
+GUILD = bot.fetch_guild(751588559693152297)
+# greetings for members and channel updates
+class Greetings(commands.Cog):
+	def __init__(self, bot):
+		self.bot = bot
+
+	@commands.Cog.listener()
+	async def on_member_join(self, member):
+		channel = member.guild.system_channel
+		if channel is not None:
+			await channel.send('Welcome {0.mention}.'.format(member))
+
+# Pathrise code templates
+class Templates(commands.Cog):
+	def __init__(self, bot):
+		self.bot = bot
+
 
 # broadcast the fellows linked in list
+cur_list = "https://docs.google.com/spreadsheets/d/1clZOTGUNFC6Osf5OIK2S5kGsr2IzhkidcZ9FBe88kdk/"
+short_link = "https://bit.ly/2ZcIzls"
 @bot.command(name='linkedin', help='Responds with a link to the fellows google sheet')
 async def linked_in_list(ctx):
-	response = f'Here is the list of fellows linked in:'
+	li_chan = bot.get_channel(752050305234894938)
+	response = f"Here is the official compiled list of fellow's LinkedIn:  {short_link} \nIf you are not on the list, please feel free to add yourself! \n Please also check out #linkedin-plug for other users to connect with."
+
 	print("Someone is asking for the linkedin list...")
 	await ctx.send(response)
 
@@ -47,9 +68,10 @@ async def get_hard(ctx):
 # random leetcode problem
 @bot.command(name='random', help='Returns a link to a random leetcode.')
 async def get_random(ctx):
-	get_leetcode_question('')
+	# get_leetcode_question('')
 	response = f'Try this random leetcode! LINK'
 	await ctx.send(response)
+
 
 
 """
@@ -62,7 +84,6 @@ https://leetcode.com/problems/random-one-question/all/?difficulty=Easy
 https://leetcode.com/problems/random-one-question/all/?difficulty=Medium
 https://leetcode.com/problems/random-one-question/all/?difficulty=Hard
 """
-
 def get_leetcode_question(dif: str):
 	# build the url for the request
 
@@ -72,6 +93,11 @@ def get_leetcode_question(dif: str):
 	# print(r.content)
 
 
+
+
+
+bot.add_cog(Greetings(bot))
+bot.add_cog(Templates(bot))
 bot.run(token)
 
 

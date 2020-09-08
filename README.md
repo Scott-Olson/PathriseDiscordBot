@@ -16,7 +16,7 @@
 + [About](#about)
 + [Demo / Working](#demo)
 + [Usage](#usage)
-+ [TODO](../TODO.md)
++ [TODO](#todo)
 + [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
@@ -37,7 +37,7 @@ The first part, i.e. "!help" **is not** case sensitive.
 
 The bot will list the available commands.
 
-### TODO
+### TODO <a name = "todo"></a>
 
 ---
 
@@ -50,7 +50,7 @@ The bot will list the available commands.
 
 
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+<!-- ## 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
 ### Prerequisites
@@ -83,7 +83,7 @@ End with an example of getting some data out of the system or using it for a lit
 To see an example project on how to deploy your bot, please see my own configuration:
 
 + **Heroku**: https://github.com/kylelobo/Reddit-Bot#deploying_the_bot
-
+ -->
 ## ⛏️ Built Using <a name = "built_using"></a>
 + [Discordpy](https://discordpy.readthedocs.io/en/latest/index.html) - Python Discord API Wrapper
 + [Discordpy.commands](https://discordpy.readthedocs.io/en/latest/ext/commands/index.html) - Bot commands framework
