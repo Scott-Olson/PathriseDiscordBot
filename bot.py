@@ -20,8 +20,6 @@ my_guild = os.getenv('DISCORD_GUILD')
 # command_prefix determines what each command needs to start with
 # Example: !test -> calls the test command
 bot = commands.Bot(command_prefix = '!', case_insensitive = True, description = 'Pathrise SWE Bot')
-GUILD = bot.fetch_guild(751588559693152297)
-
 
 # broadcast the fellows linked in list
 cur_list = os.getenv('FELLOWS_LI_LIST')
@@ -38,6 +36,7 @@ async def linked_in_list(ctx):
 @bot.command(name = 'easy', help = 'Returns a link to a leetcode easy.')
 async def get_easy(ctx):
 	prob = problems.get_easy_problem()
+	print(prob.title)
 	response = f"Here is an easy problem to try!\n {prob.get_title()}: {prob.get_link()}"
 	await ctx.send(response)
 
@@ -45,21 +44,24 @@ async def get_easy(ctx):
 @bot.command(name = 'medium', help = 'Returns a link to a leetcode medium.')
 async def get_medium(ctx):
 	prob = problems.get_medium_problem()
-	response = f'Try this leetcode medium! LINK'
+	print(prob.title)
+	response = f"Here is an easy problem to try!\n {prob.get_title()}: {prob.get_link()}"
 	await ctx.send(response)
 
 # hard leetcode problem
 @bot.command(name = 'hard', help = 'Returns a link to a leetcode hard.')
 async def get_hard(ctx):
 	prob = problems.get_hard_problem()
-	response = f'Try this leetcode hard! LINK'
+	print(prob.title)
+	response = f"Here is an easy problem to try!\n {prob.get_title()}: {prob.get_link()}"
 	await ctx.send(response)
 
 # random leetcode problem
 @bot.command(name = 'random', help = 'Returns a link to a random leetcode.')
 async def get_random(ctx):
-	# get_leetcode_question('')
-	response = f'Try this random leetcode! LINK'
+	prob = problems.get_random_problem()
+	print(prob.title)
+	response = f"Here is an easy problem to try!\n {prob.get_title()}: {prob.get_link()}"
 	await ctx.send(response)
 
 # set the daily leetcode problem for the server

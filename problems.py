@@ -40,7 +40,7 @@ class Problem():
 		return self.slug
 
 
-def update_problem_list():
+def update_problem_list() -> None:
 
 	r = requests.get('https://leetcode.com/api/problems/all')
 	r = r.json()
@@ -62,7 +62,9 @@ def update_problem_list():
 			# print("Title: ", p['stat']['question__title'])
 			# print("Level: ", p['difficulty']['level'])
 			prob = Problem(p['stat']['question_id'], p['stat']['question__title_slug'], p['stat']['question__title'], p['difficulty']['level'])
-			print(prob.get_link())
+			# print(prob.get_link())
+
+			all_problems.append(prob)
 
 			if p['difficulty']['level'] == 1:
 				easy_problems.append(prob)
@@ -72,36 +74,40 @@ def update_problem_list():
 
 			elif p['difficulty']['level'] == 3:
 				hard_problems.append(prob)
+	print(
+		f'Compiled questions found: {len(all_problems)}\n',
+		f'Hard: {len(hard_problems)}, Medium: {len(med_problems)}, Easy: {len(easy_problems)}'
+		)
 
 # random problem generator, accepts upper bound
-def random_index(upper: int):
+def random_index(upper: int) -> int:
 	return random.randrange(0, upper)
 
 # get random, not specific difficulty
-def get_random_problem(diff: str):
+def get_random_problem(diff: str) -> Problem:
 	i = random_index(len(all_problems))
 	return all_problems[i]
 
 # set the daily problem so that anyone can retrieve it
-def set_daily(Problem):
+def set_daily(Problem) -> Problem:
 	return
 
 # get the daily problem
-def get_daily_problem():
+def get_daily_problem() -> Problem:
 	return
 
 # get easy random problem
-def get_easy_problem():
+def get_easy_problem() -> Problem:
 	i = random_index(len(easy_problems))
 	return easy_problems[i]
 
 # get medium random problem
-def get_medium_problem():
+def get_medium_problem() ->Problem:
 	i = random_index(len(med_problems))
 	return med_problems[i]
 
 # get hard random problem
-def get_hard_problem():
+def get_hard_problem() -> Problem:
 	i = random_index(len(hard_problems))
 	return hard_problems[i]
 

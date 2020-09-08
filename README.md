@@ -55,9 +55,10 @@ To get an easy leetcode problem, type:
 - [x] Create structure for leetcode integration
 - [ ] ~~Create structure for code templates~~
 - [ ] Deploy bot to Heroku
-- [ ] Deploy bot to discord server
+- [ ] Deploy bot to Pathrise Discord server
 - [ ] Automate the daily problems
 - [ ] Automate the problem skimming to refresh problems if something is added to leetcode.
+- [ ] WolframAlpha querry support? (something I saw on another discord)
 
 
 
