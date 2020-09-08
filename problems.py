@@ -13,10 +13,10 @@ This uses a similar approach to many other Leetcode API crawlers:
 
 """
 
-all_problems = ['all']
-easy_problems = ['easy']
-med_problems = ['med']
-hard_problems = ['hard']
+all_problems = []
+easy_problems = []
+med_problems = []
+hard_problems = []
 
 daily_problem = None
 
@@ -50,10 +50,14 @@ def update_problem_list() -> None:
 	# if yes, run the store again
 	if stored_problems_len < r['num_total']:
 		# reset all the lists
-		all_problems = []
-		easy_problems = []
-		med_problems = []
-		hard_problems = []
+		global all_problems
+		global easy_problems
+		global med_problems
+		global hard_problems
+
+		all_problems, easy_problems, med_problems, hard_problems = [], [], [], []
+
+
 
 		r_set = r['stat_status_pairs']
 		for p in r_set:
@@ -84,7 +88,7 @@ def random_index(upper: int) -> int:
 	return random.randrange(0, upper)
 
 # get random, not specific difficulty
-def get_random_problem(diff: str) -> Problem:
+def get_random_problem() -> Problem:
 	i = random_index(len(all_problems))
 	return all_problems[i]
 
