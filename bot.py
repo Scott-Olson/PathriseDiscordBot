@@ -12,9 +12,11 @@ problems.update_problem_list()
 
 load_dotenv()
 # the Oauth2 token for your bot user from the .env file
-token = os.getenv('DISCORD_TOKEN')
+# token = os.getenv('DISCORD_TOKEN')
+token = os.environ.get('DISCORD_TOKEN')
 # guild is what we would refer to as server
-my_guild = os.getenv('DISCORD_GUILD')
+# my_guild = os.getenv('DISCORD_GUILD')
+my_guild = os.environ.get('DISCORD_GUILD')
 
 # this instantiates a discord bot, which is a subclass of the discord Client class
 # command_prefix determines what each command needs to start with
@@ -22,9 +24,15 @@ my_guild = os.getenv('DISCORD_GUILD')
 bot = commands.Bot(command_prefix = '!', case_insensitive = True, description = 'Pathrise SWE Bot')
 
 # broadcast the fellows linked in list
-cur_list = os.getenv('FELLOWS_LI_LIST')
-short_link = os.getenv('SHORT_LINK')
-bot_link = os.getenv('DISCORD_REPO')
+# cur_list = os.getenv('FELLOWS_LI_LIST')
+cur_list = os.environ.get('FELLOWS_LI_LIST')
+
+# short_link = os.getenv('SHORT_LINK')
+short_link = os.environ.get('SHORT_LINK')
+
+# bot_link = os.getenv('DISCORD_REPO')
+bot_link = os.environ.get('DISCORD_REPO')
+
 @bot.command(name = 'linkedin', help = 'Responds with a link to the fellows google sheet')
 async def linked_in_list(ctx):
 	li_chan = bot.get_channel(752050305234894938)
