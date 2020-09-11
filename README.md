@@ -4,11 +4,11 @@
  <img width=200px height=200px src="https://i.imgur.com/FxL5qM0.jpg" alt="Bot logo"></a>
 </p>
 
-<h3 align="center">Pathrise SWE Discord Bot</h3>
+<h3 align="center">SWE Discord Bot</h3>
 
 ---
 
-<p align="center"> 🤖 A bot to to help manage the Pathrise SWE Fellows Discord server. 
+<p align="center"> 🤖 A bot to to help manage a SWE Discord server. 
     <br> 
 </p>
 
@@ -22,7 +22,7 @@
 ## 🧐 About <a name = "about"></a>
 This is a really simple bot with the idea that it will become more complex and evolve over time. 
 
-The core concept is to provide basic leetcode integration to the discord server for fellows to work on together. Other functionality includes providing lists of info for fellows.
+The core concept is to provide basic leetcode integration to the discord server for people to work on together. 
 
 ## 🎥 Demo / Working <a name = "demo"></a>
 Place holder for now
@@ -105,5 +105,5 @@ To see an example project on how to deploy your bot, please see my own configura
 ## ✍️ Authors <a name = "authors"></a>
 + [@scott-olson](https://github.com/scott-olson) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/scott-olson/PathriseDiscordBot/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/scott-olson/SWEDiscordBot/contributors) who participated in this project.
 

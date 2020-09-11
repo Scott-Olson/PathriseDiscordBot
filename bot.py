@@ -25,28 +25,28 @@ bot = commands.Bot(command_prefix = '!', case_insensitive = True, description = 
 
 # broadcast the fellows linked in list
 # cur_list = os.getenv('FELLOWS_LI_LIST')
-cur_list = os.environ.get('FELLOWS_LI_LIST')
+# cur_list = os.environ.get('FELLOWS_LI_LIST')
 
 # short_link = os.getenv('SHORT_LINK')
-short_link = os.environ.get('SHORT_LINK')
+# short_link = os.environ.get('SHORT_LINK')
 
 # bot_link = os.getenv('DISCORD_REPO')
 bot_link = os.environ.get('DISCORD_REPO')
 
 #dp guide link
-dp_link = os.environ.get('DP_LINK')
+# dp_link = os.environ.get('DP_LINK')
 
 # respons with a link to the fellows google sheet
-@bot.command(name = 'linkedin', help = 'Responds with a link to the fellows google sheet')
-async def linked_in_list(ctx):
-	response = f"Here is the official compiled list of fellow's LinkedIn:  {short_link} \nIf you are not on the list, please feel free to add yourself! \n Please also check out #linkedin-plug for other Discord users to connect with."
-	print("Someone is asking for the linkedin list...")
-	await ctx.send(response)
+# @bot.command(name = 'linkedin', help = 'Responds with a link to the fellows google sheet')
+# async def linked_in_list(ctx):
+# 	response = f"Here is the official compiled list of fellow's LinkedIn:  {short_link} \nIf you are not on the list, please feel free to add yourself! \n Please also check out #linkedin-plug for other Discord users to connect with."
+# 	print("Someone is asking for the linkedin list...")
+# 	await ctx.send(response)
 
-@bot.command(name = 'dpguide', help = 'Responds with a link to the Pathrise Dynamic Programing guide made by Michael M and Nil M')
-async def dynamic_programming_guide(ctx):
-	response = f"Here is the Pathrise Dynamic Programing guide from the DP workshop. \n {dp_link}"
-	await ctx.send(response)
+# @bot.command(name = 'dpguide', help = 'Responds with a link to the Pathrise Dynamic Programing guide made by Michael M and Nil M')
+# async def dynamic_programming_guide(ctx):
+# 	response = f"Here is the Pathrise Dynamic Programing guide from the DP workshop. \n {dp_link}"
+# 	await ctx.send(response)
 
 # return info on the bot itself and the github link
 @bot.command(name = 'botinfo', help = 'Github page of the Discord bot. Feel free to contribute!')
