@@ -3,6 +3,7 @@ import asyncio
 import discord
 import requests
 import problems
+import admin
 # import beautifulsoup4
 
 from dotenv import load_dotenv
@@ -90,6 +91,11 @@ async def get_random(ctx):
 @bot.command(name = 'setdaily', help = '*in development* Used to set the daily problem for the server.')
 async def set_daily(ctx):
 	await ctx.send()
+
+@bot.command(name = 'exportmembers', help = 'Sends a CSV with guild members to caller.')
+async def export_members(ctx):
+	filtered = admin.generate_csv(ctx.guild.members)
+	print(filtered)
 
 
 """
