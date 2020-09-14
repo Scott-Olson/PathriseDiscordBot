@@ -92,12 +92,12 @@ async def get_random(ctx):
 async def set_daily(ctx):
 	await ctx.send()
 
-@bot.command(name = 'exportmembers', help = 'Sends a CSV with guild members to caller.')
-async def export_members(ctx):
-	author = ctx.author
-	csvfilename = admin.generate_csv(ctx.guild.members)
-	file = discord.File(csvfilename)
-	await author.send(content="Here's a list of your compatriats.", file=file)
+# @bot.command(name = 'exportmembers', help = 'Sends a CSV with guild members to caller.')
+# async def export_members(ctx):
+# 	author = ctx.author
+# 	csvfilename = admin.generate_csv(ctx.guild.members)
+# 	file = discord.File(csvfilename)
+# 	await author.send(content="Here's a list of your compatriats.", file=file)
 
 
 """
