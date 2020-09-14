@@ -1,8 +1,10 @@
 from discord import Member
 from typing import List
 from csv import DictWriter
+from os import mkdir
 
 def generate_csv(members: List[Member]):
+  mkdir("output")
   filename = "output/test.csv"
   file = open(filename, "w")
   fields = ["Display Name", "Nickname"]
