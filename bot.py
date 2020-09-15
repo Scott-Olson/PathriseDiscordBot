@@ -92,13 +92,26 @@ async def get_random(ctx):
 async def set_daily(ctx):
 	await ctx.send()
 
-# @bot.command(name = 'exportmembers', help = 'Sends a CSV with guild members to caller.')
-# async def export_members(ctx):
-# 	author = ctx.author
-# 	csvfilename = admin.generate_csv(ctx.guild.members)
-# 	file = discord.File(csvfilename)
-# 	await author.send(content="Here's a list of your compatriats.", file=file)
+# Hide command from default help message.
+# Command can only be used publicly by admins.
+@bot.command(name = 'exportmembers', hidden = True)
+@commands.guild_only()
+@admin.is_admin()
+async def export_members(ctx):
+	"""
+	*Admin only* Sends a CSV of guild members to caller.
+	"""
+	author = ctx.author
+	csvfilename = admin.generate_csv(ctx.guild.members)
+	file = discord.File(csvfilename)
+	await author.send(content="Here's a list of your compatriats.", file=file)
 
+@export_members.error
+async def export_members_error(ctx, error):
+	if isinstance(error, admin.NotAdminError):
+		await ctx.author.send(error)
+	elif isinstance(error, commands.NoPrivateMessage):
+		await ctx.author.send(error)
 
 """
 Because leetcode doesn't have an easy access API to recieve the problems
