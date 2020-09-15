@@ -1,7 +1,18 @@
 from discord import Member
+from discord.ext import commands
 from typing import List
 from csv import DictWriter
 import os
+
+class NotAdminError(commands.CheckFailure):
+    pass
+
+def is_admin():
+	async def predicate(ctx):
+		if not ctx.author.guild_permissions.administrator:
+			raise NotAdminError("Sorry, this information is need-to-know.")
+		return True
+	return commands.check(predicate)
 
 def generate_csv(members: List[Member]) -> str:
 	if not os.path.isdir("output"):
